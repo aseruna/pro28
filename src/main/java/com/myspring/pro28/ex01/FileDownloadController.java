@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,7 @@ public class FileDownloadController {
 	private static String CURR_IMAGE_REPO_PATH = "C:\\DEV\\spring\\image_repo";
 	
 	@RequestMapping(value = "/download")
-	public void download(@RequestParam("imageFileName") String imageFileName, HttpServletRequest request, HttpServletResponse response) throws Exception{
+	public void download(@RequestParam("imageFileName") String imageFileName, HttpServletResponse response) throws Exception{
 		OutputStream out = response.getOutputStream();
 		String downFile = CURR_IMAGE_REPO_PATH+"\\"+imageFileName;
 		File file = new File(downFile);
