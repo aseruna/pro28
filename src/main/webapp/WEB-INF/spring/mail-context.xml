@@ -3,10 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
+	<!-- To계정은 낮은 보안 수준의 앱 허용 해야 정상적으로 메일이 발송됨 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
-		<property name="username" value="beenjh608@gmail.com" />
+		<property name="username" value="beenjh6088@gmail.com" />
 		<property name="password" value="Qlswlgml!!20" />
 		<property name="javaMailProperties">
 			<props>
@@ -21,7 +22,7 @@
 	
 	<bean id="preConfiguredMessage" class="org.springframework.mail.SimpleMailMessage">
 		<property name="to" value="beenjh6088@naver.com"></property>
-		<property name="from" value="beenjh608@gmail.com"></property>
+		<property name="from" value="beenjh6088@gmail.com"></property>
 		<property name="subject" value="테스트 메일입니다."/>
 	</bean>
 	
